@@ -1,0 +1,78 @@
+.container {
+  font-family: "Courier New", Courier, monospace;
+}
+.application {
+  border: 1px solid rgb(78, 3, 81);
+  border-radius: 14px;
+  padding: 5px;
+  margin: 20px;
+  max-width: 600px;
+}
+h1 {
+  display: block;
+  font-size: 45px;
+  margin-left: 15px;
+  padding: 0;
+}
+ul {
+  margin-left: 15px;
+  width: 100%;
+  padding: 0;
+}
+li {
+  display: block;
+  list-style: none;
+}
+.temp {
+  font-size: 40px;
+  font-weight: 500;
+}
+.units {
+  position: relative;
+  font-size: 20px;
+
+  top: -15px;
+}
+.day {
+  font-size: 30px;
+  margin-left: 15px;
+  margin-top: 0;
+}
+.cloud-icon {
+  margin-right: 10px;
+  font-size: 30px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.col-1 {
+  display: block;
+  margin: 10px 0 20px 20px;
+  font-size: 15px;
+}
+.col-6 {
+  display: block;
+}
+img {
+  max-width: 35%;
+  display: block;
+  float: right;
+  margin-top: 70px;
+}
+.search {
+  display: block;
+  position: relative;
+  width: 100%;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+.current-location {
+  margin-top: 5px;
+}
+.button-current {
+  margin-left: 15px;
+  border-radius: none;
+  border-color: black;
+}
