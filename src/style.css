@@ -46,6 +46,7 @@ li {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
+  text-transform: capitalize;
 }
 .col-1 {
   display: block;
