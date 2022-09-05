@@ -77,3 +77,7 @@ img {
   border-radius: none;
   border-color: black;
 }
+.footer {
+  display: block;
+  margin-left: 15px;
+}
