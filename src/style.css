@@ -72,12 +72,12 @@ img {
 .current-location {
   margin-top: 5px;
 }
-.button-current {
-  margin-left: 15px;
-  border-radius: none;
-  border-color: black;
-}
+
 .footer {
+  margin-left: 0px;
+}
+.weather-forecast {
+  margin-top: 0px;
   display: block;
-  margin-left: 110px;
+  text-align: center;
 }
