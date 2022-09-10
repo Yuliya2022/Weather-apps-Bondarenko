@@ -61,7 +61,7 @@ img {
   max-width: 35%;
   display: block;
   float: right;
-  margin-top: 70px;
+  margin-top: 30px;
 }
 .search {
   display: block;
@@ -76,9 +76,18 @@ img {
 
 .footer {
   margin-left: 0px;
+  font-size: 12px;
 }
 .weather-forecast {
   margin-top: 0px;
   display: block;
   text-align: center;
+  font-size: 13px;
+  color: #000;
+}
+.forecast-day {
+  opacity: 0.7;
+}
+.forecast-temp-min {
+  opacity: 0.7;
 }
