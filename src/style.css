@@ -3,6 +3,7 @@
 }
 .application {
   border: 1px solid rgb(78, 3, 81);
+  display: block;
   border-radius: 14px;
   padding: 5px;
   margin: 20px;
