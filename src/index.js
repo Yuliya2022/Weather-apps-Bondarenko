@@ -27,24 +27,14 @@ currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 function showForecast() {
   let forecastUnit = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
-  forecastHTML =
-    forecastHTML +
-    `   <div class="col-2">
-            <div class="forecast-day">
-              Mon
-            </div>
-            <span class="forecast-icon">☁</span>
-            <div class="forecast-temp"> 
-              <span class="forecast-temp-max">19°</span>
-              <span class="forecast-temp-min">11°</span>
-            </div>
-          </div>`;
-  forecastHTML =
-    forecastHTML +
-    `  
+  let forecastDays = ["Sun", "Mon", "Tue"];
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `  
           <div class="col-2">
             <div class="forecast-day">
-              Mon
+              ${day}
             </div>
             <span class="forecast-icon">☁</span>
             <div class="forecast-temp"> 
@@ -52,6 +42,7 @@ function showForecast() {
               <span class="forecast-temp-min">11°</span>
             </div>
           </div>`;
+  });
   forecastHTML = forecastHTML + `</div>`;
   forecastUnit.innerHTML = forecastHTML;
 }
