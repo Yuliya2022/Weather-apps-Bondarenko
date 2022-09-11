@@ -24,6 +24,37 @@ let day = days[now.getDay()];
 
 currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
+function showForecast() {
+  let forecastUnit = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class="row">`;
+  forecastHTML =
+    forecastHTML +
+    `   <div class="col-2">
+            <div class="forecast-day">
+              Mon
+            </div>
+            <span class="forecast-icon">☁</span>
+            <div class="forecast-temp"> 
+              <span class="forecast-temp-max">19°</span>
+              <span class="forecast-temp-min">11°</span>
+            </div>
+          </div>`;
+  forecastHTML =
+    forecastHTML +
+    `  
+          <div class="col-2">
+            <div class="forecast-day">
+              Mon
+            </div>
+            <span class="forecast-icon">☁</span>
+            <div class="forecast-temp"> 
+              <span class="forecast-temp-max">19°</span>
+              <span class="forecast-temp-min">11°</span>
+            </div>
+          </div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastUnit.innerHTML = forecastHTML;
+}
 function showWeather(response) {
   console.log(response.data);
   let theCity = document.querySelector("#city");
@@ -64,3 +95,5 @@ currentLocation.addEventListener("click", getLocation);
 
 let form = document.querySelector(".search");
 form.addEventListener("submit", searchCity);
+
+showForecast();
