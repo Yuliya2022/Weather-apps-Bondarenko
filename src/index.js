@@ -24,10 +24,11 @@ let day = days[now.getDay()];
 
 currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response);
   let forecastUnit = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
-  let forecastDays = ["Sun", "Mon", "Tue"];
+  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Fri", "Sat"];
   forecastDays.forEach(function (day) {
     forecastHTML =
       forecastHTML +
@@ -46,6 +47,11 @@ function showForecast() {
   forecastHTML = forecastHTML + `</div>`;
   forecastUnit.innerHTML = forecastHTML;
 }
+function getForecast(coordinates) {
+  let apiKey = "f681731981e95f8395458df4844e3326c";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
 function showWeather(response) {
   console.log(response.data);
   let theCity = document.querySelector("#city");
@@ -56,9 +62,10 @@ function showWeather(response) {
   theHumidity.innerHTML = response.data.main.humidity;
   let theWind = document.querySelector("#wind");
   theWind.innerHTML = Math.round(response.data.wind.speed);
+  getForecast(response.data.coords);
 }
 function findCity(city) {
-  let apiKey = "681731981e95f8395458df4844e3326c";
+  let apiKey = "6681731981e95f8395458df4844e3326c";
   let searchCity = document.querySelector("#city-input").value;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
@@ -73,7 +80,7 @@ function searchCity(event) {
 
 function searchLocation(position) {
   let apiKey = "681731981e95f8395458df4844e3326c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
 }
 function getLocation(event) {
@@ -86,5 +93,4 @@ currentLocation.addEventListener("click", getLocation);
 
 let form = document.querySelector(".search");
 form.addEventListener("submit", searchCity);
-
 showForecast();
