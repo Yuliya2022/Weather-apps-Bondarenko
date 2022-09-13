@@ -10,17 +10,9 @@
     <link rel="stylesheet" href="src/style.css" />
   
   </head>
-  <body>
-   
+  <body>  
     <div class="container"> 
-       <div class="application">      
-          <div class="row">
-            <div class="col-1">POZNAŃ</div>
-            <div class="col-1">KRAKÓW</div>
-              <div class="col-1">GDANSK</div>
-                <div class="col-1">LUBLIN</div>
-          </div>
-          
+       <div class="application">            
         <form class="search">
           <input type="text" id="city-input" placeholder="Enter the city" />
           <input type="submit" value="Search location" />
@@ -29,12 +21,13 @@
         </form>
         
         <img src="img/app.svg" alt="">
-       <h1 id="city">Warsaw</h1>
+       <h1 class="city" id="city">Warsaw</h1>
        <h2 class="day" id="current-time">Sunday 04:52</span></h2>
+       <h6 class="weather-description">Cloudy</h6>
        <div class="row">
         <div class="col-6">
           <ul>
-          <li> <span class="cloud-icon">☁</span><span class="temp" id="temperature">19</span><span class="units">℃</span>
+          <li> <span class="cloud-icon">☁</span><span class="temp" id="temperature">19</span><span class="units">℃|℉</span>
           </ul>
           </div>
         <div class="col-6">

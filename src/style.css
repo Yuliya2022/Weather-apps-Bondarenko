@@ -1,5 +1,5 @@
 .container {
-  font-family: "Courier New", Courier, monospace;
+  font-family: sans-serif;
 }
 .application {
   border: 1px solid rgb(78, 3, 81);
@@ -34,10 +34,16 @@ li {
 
   top: -15px;
 }
+.city {
+  margin-bottom: 0px;
+}
 .day {
-  font-size: 30px;
+  font-size: 25px;
   margin-left: 15px;
   margin-top: 0;
+}
+.weather-description {
+  margin-left: 15px;
 }
 .cloud-icon {
   margin-right: 10px;
@@ -65,7 +71,8 @@ img {
 }
 .search {
   display: block;
-  position: relative;
+  margin-top: 15px;
+  position: sticky;
   width: 100%;
   margin-left: 15px;
   margin-bottom: 10px;
@@ -75,7 +82,8 @@ img {
 }
 
 .footer {
-  margin-left: 0px;
+  margin-left: 10px;
+  margin-top: 10px;
   font-size: 12px;
 }
 .weather-forecast {
