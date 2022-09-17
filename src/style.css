@@ -12,17 +12,22 @@
 h1 {
   display: block;
   font-size: 45px;
+  color: rgb(105, 97, 97);
   margin-left: 15px;
+  margin-bottom: 0px;
   padding: 0;
+  line-height: 50px;
 }
 ul {
-  margin-left: 15px;
+  margin: 0px;
   width: 100%;
   padding: 0;
 }
 li {
   display: block;
   list-style: none;
+  margin: 0px;
+  padding: 0px;
 }
 .temp {
   font-size: 40px;
@@ -46,7 +51,7 @@ li {
   margin-left: 15px;
 }
 .cloud-icon {
-  margin-right: 10px;
+  margin-left: 20px;
   font-size: 30px;
 }
 .row {
