@@ -24,7 +24,6 @@ let day = days[now.getDay()];
 currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
 function showForecast(response) {
-  console.log(response);
   let forecastUnit = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
   let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Fri", "Sat"];
@@ -47,13 +46,11 @@ function showForecast(response) {
   forecastUnit.innerHTML = forecastHTML;
 }
 function getForecast(response) {
-  console.log(response.coord);
   let apiKey = "2681731981e95f8395458df4844e3326c";
   let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showForecast);
 }
 function showWeather(response) {
-  console.log(response.data);
   let theCity = document.querySelector("#city");
   theCity.innerHTML = response.data.name;
   let theDescription = document.querySelector("#weather-description");
@@ -81,7 +78,6 @@ function searchCity(event) {
 }
 
 function searchLocation(response) {
-  console.log(response.data);
   let apiKey = "681731981e95f8395458df4844e3326c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${getLocation}&lat=${coord.lat}&lon=${coord.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showWeather);
