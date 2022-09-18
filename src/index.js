@@ -51,6 +51,7 @@ function getForecast(response) {
   axios.get(apiUrl).then(showForecast);
 }
 function showWeather(response) {
+  console.log(response.data);
   let theCity = document.querySelector("#city");
   theCity.innerHTML = response.data.name;
   let theDescription = document.querySelector("#weather-description");
@@ -61,7 +62,13 @@ function showWeather(response) {
   theHumidity.innerHTML = response.data.main.humidity;
   let theWind = document.querySelector("#wind");
   theWind.innerHTML = Math.round(response.data.wind.speed);
-  getForecast(response.coord);
+  let theIcon = document.querySelector("#icon");
+  theIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
+  getForecast(response.data.coord);
 }
 function findCity(city) {
   let apiKey = "681731981e95f8395458df4844e3326c";

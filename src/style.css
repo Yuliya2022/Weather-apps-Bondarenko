@@ -52,9 +52,8 @@ li {
   margin-left: 15px;
   text-transform: capitalize;
 }
-.cloud-icon {
-  margin-left: 10px;
-  font-size: 30px;
+.weather-image {
+  margin-left: 5px;
 }
 .row {
   display: flex;
