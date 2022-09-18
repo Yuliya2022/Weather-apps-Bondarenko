@@ -77,12 +77,8 @@ img {
   margin-bottom: 10px;
 }
 .form-control {
-  max-width: 100%;
+  max-width: 45%;
 }
-.current-location {
-  margin-top: 5px;
-}
-
 .footer {
   margin-left: 10px;
   margin-top: 10px;
@@ -101,4 +97,11 @@ img {
 }
 .forecast-temp-min {
   opacity: 0.7;
+}
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
 }

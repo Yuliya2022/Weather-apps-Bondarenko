@@ -57,7 +57,7 @@ function showWeather(response) {
   let theDescription = document.querySelector("#weather-description");
   theDescription.innerHTML = response.data.weather[0].description;
   let theTemperature = document.querySelector("#temperature");
-  theTemperature.innerHTML = Math.round(response.data.main.temp);
+  theTemperature.innerHTML = Math.round(celsiusTemp);
   let theHumidity = document.querySelector("#humidity");
   theHumidity.innerHTML = response.data.main.humidity;
   let theWind = document.querySelector("#wind");
@@ -67,7 +67,7 @@ function showWeather(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
+  celsiusTemp = response.data.main.temp;
   getForecast(response.data.coord);
 }
 function findCity(city) {
@@ -91,7 +91,30 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
+function showCelsiusTemp(event) {
+  event.preventDefault();
+  let theTemperature = document.querySelector("#temperature");
+  theTemperature.innerHTML = Math.round(celsiusTemp);
+}
+
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+
+  let fahrenheitTemp = (celsciusTemp * 9) / 5 + 32;
+  let theTemperature = document.querySelector("#temperature");
+  theTemperature.innerHTML = Math.round(fahrenheitTemp);
+}
+
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemp);
+
+let celsiusTemp = null;
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemp);
+
+findCity("Warsaw");
 showForecast();

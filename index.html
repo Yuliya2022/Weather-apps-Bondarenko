@@ -12,14 +12,10 @@
   
   <body>  
     <div class="container"> 
-       <div class="application"> 
-        <div class="row">
-          <div class="col-6">           
+       <div class="application">        
         <form class="search" id="search-form">
-<input type="text" id="city-input" placeholder="Enter the city" class="form-control"/>
-    <input type="submit" value="Search city" />
-        </div>
-        </div>
+<span><input type="text" id="city-input" placeholder="Enter the city" class="form-control"/></span>
+<span><input type="submit" value="Search city" /></span>   
             </form>
         
         <img src="img/app.svg" alt="">
@@ -31,14 +27,14 @@
           <img src="http://openweathermap.org/img/wn/10d@2x.png" id="icon"/>
          <ul>
           <li> 
-            <span class="temp" id="temperature">19</span><span class="units">℃ | <a href="#">℉</a></span>
+            <span class="temp" id="temperature">19</span><span class="units">℃ | <a href="#" id="fahrenheit-link">℉</a></span>
           </ul>
           </div>
         <div class="col-6">
           <ul>
            <li>Humidity <span id="humidity"> 65</span>%</li>
               <li>Wind <span id="wind"> 14,9 </span>km/h</li>
-          </div>
+        </div>
       </div>
       <div class="weather-forecast" id="weather-forecast"></div>
       <script src="src/index.js"></script>
