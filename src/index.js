@@ -95,9 +95,6 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-let currentLocation = document.querySelector("#current-location");
-currentLocation.addEventListener("click", getLocation);
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
