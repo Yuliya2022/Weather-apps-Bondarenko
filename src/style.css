@@ -105,3 +105,9 @@ img {
 .active:hover {
   text-decoration: none;
 }
+.weather-icon {
+  display: block;
+  margin-right: 20px;
+  max-width: 35%;
+  margin-top: -5px;
+}
