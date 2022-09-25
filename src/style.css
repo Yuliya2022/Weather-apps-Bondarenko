@@ -33,11 +33,7 @@ li {
   font-size: 40px;
   font-weight: 500;
 }
-.units {
-  position: relative;
-  font-size: 12px;
-  top: -19px;
-}
+
 .city {
   margin-bottom: 0px;
   text-transform: capitalize;
@@ -107,7 +103,14 @@ img {
 }
 .weather-icon {
   display: block;
-  margin-right: 20px;
+  margin-right: -15px;
+  max-width: 36%;
+  margin-top: -10px;
+}
+.units {
+  display: block;
+  font-size: 12px;
+  margin-top: -50px;
+  margin-left: 50px;
   max-width: 35%;
-  margin-top: -5px;
 }
