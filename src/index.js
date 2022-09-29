@@ -24,7 +24,8 @@ let day = days[now.getDay()];
 currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 
 function showForecast(response) {
-  let forecast = response.data;
+  console.log(response);
+  let forecast = response.data.daily;
   let forecastUnit = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
 
@@ -34,9 +35,9 @@ function showForecast(response) {
       `  
           <div class="col-2">
             <div class="forecast-day">
-              ${forecastDay.coord.dt}
+              ${forecastDay.current.dt}
             </div>
-            <span class="forecast-icon">☁</span>
+            <span class="forecast-icon">${forecastDay.weather[0].icon}</span>
             <div class="forecast-temp"> 
               <span class="forecast-temp-max">${forecastDay.main.temp_max}°</span>
               <span class="forecast-temp-min">${forecastDay.main.temp_min}</span>
