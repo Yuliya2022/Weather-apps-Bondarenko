@@ -35,12 +35,12 @@ function showForecast(response) {
       `  
           <div class="col-2">
             <div class="forecast-day">
-              ${forecastDay.current.dt}
+              ${forecastDay.dt}
             </div>
             <span class="forecast-icon">${forecastDay.weather[0].icon}</span>
             <div class="forecast-temp"> 
-              <span class="forecast-temp-max">${forecastDay.main.temp_max}°</span>
-              <span class="forecast-temp-min">${forecastDay.main.temp_min}</span>
+              <span class="forecast-temp-max">${forecastDay.temp.max}°</span>
+              <span class="forecast-temp-min">${forecastDay.temp.min}</span>
             </div>
           </div>`;
   });
@@ -122,4 +122,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemp);
 
 findCity("Warsaw");
-showForecast();
