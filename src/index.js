@@ -1,11 +1,11 @@
-let now = new Date();
+let date = new Date();
 let currentTime = document.querySelector("#current-time");
 
-let hour = now.getHours();
+let hour = date.getHours();
 if (hour < 10) {
   hour = "0" + hour;
 }
-let minutes = now.getMinutes();
+let minutes = date.getMinutes();
 
 if (minutes < 10) {
   minutes = "0" + minutes;
@@ -19,9 +19,17 @@ let days = [
   "Friday",
   "Saturday",
 ];
-let day = days[now.getDay()];
+
+let day = days[date.getDay()];
 
 currentTime.innerHTML = `${day} ${hour}:${minutes}`;
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDate();
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
 
 function showForecast(response) {
   console.log(response);
@@ -35,12 +43,22 @@ function showForecast(response) {
       `  
           <div class="col-2">
             <div class="forecast-day">
-              ${forecastDay.dt}
+              ${formatDay(forecastDay.dt)}
             </div>
-            <span class="forecast-icon">${forecastDay.weather[0].icon}</span>
+            <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="35"
+        />
             <div class="forecast-temp"> 
-              <span class="forecast-temp-max">${forecastDay.temp.max}°</span>
-              <span class="forecast-temp-min">${forecastDay.temp.min}</span>
+              <span class="forecast-temp-max">${Math.round(
+                forecastDay.temp.max
+              )}°</span>
+              <span class="forecast-temp-min">${Math.round(
+                forecastDay.temp.min
+              )}°</span>
             </div>
           </div>`;
   });
