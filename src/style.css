@@ -59,10 +59,10 @@ li {
   display: block;
 }
 img {
-  max-width: 45%;
+  max-width: 40%;
   display: block;
   float: right;
-  margin-top: 10x;
+  margin-top: 15px;
 }
 .search {
   display: block;
@@ -112,6 +112,7 @@ img {
 }
 .units {
   display: block;
+  position: relative;
   font-size: 12px;
   margin-top: -50px;
   margin-left: 50px;
