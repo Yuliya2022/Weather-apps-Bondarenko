@@ -73,10 +73,10 @@ img {
   margin-bottom: 10px;
 }
 .form-control {
-  max-width: 45%;
+  max-width: 100%;
 }
 .footer {
-  margin-left: 10px;
+  margin-left: 100px;
   margin-top: 10px;
   font-size: 12px;
 }

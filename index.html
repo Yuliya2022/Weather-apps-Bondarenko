@@ -4,45 +4,74 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SheCodes week2</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-     <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
-   
-  
-  <body>  
-    <div class="container"> 
-       <div class="application">        
+
+  <body>
+    <div class="container">
+      <div class="application">
         <form class="search" id="search-form">
-<span><input type="text" id="city-input" placeholder="Enter the city" class="form-control"/></span>
-<span><input type="submit" value="Search city" /></span>   
-            </form>
-        
-        <img src="img/app.svg" alt="">
-       <h1 class="city" id="city">Warsaw</h1>
-       <h2 class="day" id="current-time">Sunday 04:52</span></h2>
-       <h6 class="weather-description" id="weather-description">Cloudy</h6>
-       <div class="row">
-         
-        <div class="col-6">
-         <img src="http://openweathermap.org/img/wn/10d@2x.png" class="weather-icon" id="icon"/>
-         <ul>
-    <li> 
-      <span class="temp" id="temperature">19</span><span class="units">
-              <a href="#" id="celsius-link">℃</a> | <a href="#" id="fahrenheit-link">℉</a>
-            </span>
-          </ul>
+          <div class="row">
+            <div class="col-9">
+              <input
+                type="text"
+                id="city-input"
+                placeholder="Enter city"
+                class="form-control"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search city"
+                class="btn btn-primary"
+              />
+            </div>
           </div>
-        <div class="col-6">
-          <ul>
-           <li>Humidity <span id="humidity"> 65</span>%</li>
+        </form>
+
+        <img src="img/app.svg" alt="" />
+        <h1 class="city" id="city">Warsaw</h1>
+        <h2 class="day" id="current-time">Sunday 04:52</h2>
+        <h6 class="weather-description" id="weather-description">Cloudy</h6>
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              class="weather-icon"
+              id="icon"
+            />
+            <ul>
+              <span class="temp" id="temperature">19</span
+              ><span class="units">
+                <a href="#" id="celsius-link">℃</a> |
+                <a href="#" id="fahrenheit-link">℉</a>
+              </span>
+            </ul>
+          </div>
+          <div class="col-6">
+            <ul>
+              <li>Humidity <span id="humidity"> 65</span>%</li>
               <li>Wind <span id="wind"> 14,9 </span>km/h</li>
+            </ul>
           </div>
+        </div>
+        <div class="weather-forecast" id="weather-forecast"></div>
+        <script src="src/index.js"></script>
       </div>
-      <div class="weather-forecast" id="weather-forecast"></div>
-      <script src="src/index.js"></script>
-     <div class="footer">
-       <a href="https://github.com/Yuliya2022/Weather-apps-Bondarenko">Open-source code</a>, by Yuliya Bondarenko
-     </div>
-      </body>
+    </div>
+    <div class="footer">
+      <a href="https://github.com/Yuliya2022/Weather-apps-Bondarenko"
+        >Open-source code</a
+      >
+      by Yuliya Bondarenko
+    </div>
+  </body>
 </html>
