@@ -32,7 +32,6 @@ function formatDay(timestamp) {
 }
 
 function showForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastUnit = document.querySelector("#weather-forecast");
   let forecastHTML = `<div class="row">`;
@@ -75,7 +74,6 @@ function getForecast(coord) {
 }
 
 function showWeather(response) {
-  console.log(response.data);
   let theCity = document.querySelector("#city");
   theCity.innerHTML = response.data.name;
   let theDescription = document.querySelector("#weather-description");
