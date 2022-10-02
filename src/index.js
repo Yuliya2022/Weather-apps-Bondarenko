@@ -116,29 +116,7 @@ function getLocation(event) {
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
 
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let theTemperature = document.querySelector("#temperature");
-  theTemperature.innerHTML = Math.round(celsiusTemp);
-}
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let theTemperature = document.querySelector("#temperature");
-  theTemperature.innerHTML = Math.round(fahrenheitTemp);
-}
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemp);
-
-let celsiusTemp = null;
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemp);
 
 findCity("Warsaw");
