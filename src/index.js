@@ -1,28 +1,28 @@
-let date = new Date();
-let currentTime = document.querySelector("#current-time");
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+  let hour = date.getHours();
+  if (hour < 10) {
+    hour = "0" + hour;
+  }
 
-let hour = date.getHours();
-if (hour < 10) {
-  hour = "0" + hour;
+  let minutes = date.getMinutes();
+
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  let day = days[date.getDay()];
+  return `${day} ${hour}:${minutes}`;
 }
-let minutes = date.getMinutes();
-
-if (minutes < 10) {
-  minutes = "0" + minutes;
-}
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-
-let day = days[date.getDay()];
-
-currentTime.innerHTML = `${day} ${hour}:${minutes}`;
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDate();
@@ -77,7 +77,6 @@ function showWeather(response) {
   theCity.innerHTML = response.data.name;
   let theDescription = document.querySelector("#weather-description");
   theDescription.innerHTML = response.data.weather[0].description;
-
   let theTemperature = document.querySelector("#temperature");
   celsiusTemp = response.data.main.temp;
   theTemperature.innerHTML = Math.round(celsiusTemp);
@@ -85,6 +84,8 @@ function showWeather(response) {
   theHumidity.innerHTML = response.data.main.humidity;
   let theWind = document.querySelector("#wind");
   theWind.innerHTML = Math.round(response.data.wind.speed);
+  let theDate = document.querySelector("#current-time");
+  theDate.innerHTML = formatDate(response.data.dt * 1000);
   let theIcon = document.querySelector("#icon");
   theIcon.setAttribute(
     "src",
